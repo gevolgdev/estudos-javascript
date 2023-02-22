@@ -14,13 +14,13 @@ const gevolg = {
 }
 
 const { owner: CEO} = gevolg
-// console.log(CEO)
+console.log(CEO) // 'Ricardo'
 
 const { age = 3 } = gevolg
-// console.log(age)
+console.log(age) // 3
 
 const { projects: { amount }} = gevolg
-// console.log(amount)
+console.log(amount) // 3
 
 
 // 📝 Desestruturação de Arrays -> Tirar algo de uma estrutura
@@ -28,11 +28,11 @@ const { projects: { amount }} = gevolg
 const whatILike = ['javascript', 'coffe', 'design', 'danielle', 'money']
 
 const [item1, , item3, item4, , item5 = 'friends'] = whatILike
-// console.log(item1, item3, item4, item5)
+console.log(item1, item3, item4, item5) // 'javascript', 'design', 'danielle', 'friends'
 
 
 
-// 📝 Desestruturação de functions -> Tirar algo de uma estrutura
+// 📝 Desestruturação de objetos em functions -> Tirar algo de uma estrutura
 
 function number({min = 0, max = 100}) {
   const value = Math.random() * (max - min) + min
@@ -43,4 +43,18 @@ let numbers = {
   max: 35,
 }
 
-console.log(number(numbers))
+console.log(number(numbers)) // 33
+
+
+// 📝 Desestruturação de arrays em functions -> Tirar algo de uma estrutura
+
+function numbers_1([min = 0, max = 100]) {
+  if (min > max) [min, max] = [max, min]
+  const value = Math.random() * (max - min) + min
+
+  return Math.floor(value)
+}
+
+console.log(numbers_1([50, 60])) // 51, 52, 53, ...
+console.log(numbers_1([60])) // + 60 até 100
+console.log(numbers_1([, 10])) // - 10 até 0
