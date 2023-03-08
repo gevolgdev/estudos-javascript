@@ -12,13 +12,13 @@ function oldParams(a, b, c) {
 
   return a + b + c
 }
-// console.log(oldParams()) // 3
+console.log(oldParams()) // 3
 
 // Maneira ES6
 function modernParams(a = 1, b = 1, c = 1) {
   return a + b + c
 }
-// console.log(modernParams(2)) // 4
+console.log(modernParams(2)) // 4
 
 /*
 
