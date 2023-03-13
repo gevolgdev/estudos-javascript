@@ -19,7 +19,9 @@ const users = [
 ]
 
 function sortName() {
-  const random = Math.floor(Math.random() * users.length)
+  const random = Math.floor(
+    Math.random() * users.length
+  )
   
   return `${users[random].name} (${random + 1}), Prêmio: ${users[random].gift}`
 }
